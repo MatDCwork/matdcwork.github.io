@@ -12,13 +12,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <header>
-    <h1>Part 1 — Marking up a letter</h1>
-    <p><a href="index.html">Back to Home</a></p>
-  </header>
+<header>
+  <h1>Part 1 — Marking up a letter</h1>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="letter.html" aria-current="page">Part 1: Letter</a></li>
+      <li><a href="content.html">Part 2: Structured Page</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main>
     <article>
+      <h2>Letter to Dr. Eleanor Gaye</h2>
       <address>
         <strong>Dr. Eleanor Gaye</strong><br>
         Awesome Science Faculty<br>
