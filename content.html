@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--
+    Name: Matthew Cagulada
+    File: content.html
+    Date: 10 September 2025
+    Description: Part 2 — Structured page using semantic elements.
+  -->
+  <title>Part 2 — Structured Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header>
+    <h1>Part 2 — Structured Page</h1>
+    <nav aria-label="Section">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="news" aria-labelledby="news-title">
+      <h2 id="news-title">Latest News</h2>
+
+      <article>
+        <h3>Assignment 1 Live</h3>
+        <p>This site is built with clean, semantic HTML and validates as HTML5.</p>
+      </article>
+
+      <article>
+        <h3>Project Updates</h3>
+        <p>Navigation links connect the homepage, letter, and this structured page.</p>
+      </article>
+    </section>
+
+    <section id="features" aria-labelledby="features-title">
+      <h2 id="features-title">Features</h2>
+
+      <article>
+        <h3>Semantic Layout</h3>
+        <p>Uses <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, and <code>footer</code>.</p>
+      </article>
+
+      <aside>
+        <h3>Accessibility Tip</h3>
+        <p>Use clear headings and descriptive link text to help screen-reader users.</p>
+      </aside>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <address>
+        Email: <a href="mailto:student@example.com">student@example.com</a>
+      </address>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Matthew Cagulada</p>
+  </footer>
+</body>
+</html>
