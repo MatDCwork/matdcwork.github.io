@@ -5,8 +5,9 @@
   <!--
     Name: Matthew Cagulada
     File: assign2/planets.html
-    Date: 9 September 2025
-    Description: A2 Part 2 — Structuring planet data table with scopes, groups, and special rows.
+    Date: 9 October 2025
+    Description: A2 Part 2 — Structuring planet data table with scopes, rowgroups,
+                 and a special row using colspan + rowspan.
   -->
   <title>Structuring planet data</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,8 +23,10 @@
     <h1>Structuring Planet Data</h1>
 
     <table>
+      <!-- Black border around the first (planet name) column -->
       <colgroup>
-        <col style="border-right: 3px solid #000;"><col span="5">
+        <col style="border-right: 3px solid #000;">
+        <col span="5">
       </colgroup>
 
       <caption>Planetary data (sample)</caption>
@@ -40,24 +43,59 @@
       </thead>
 
       <tbody>
+        <!-- Terrestrial group -->
         <tr><th scope="rowgroup" colspan="6">Terrestrial planets</th></tr>
-        <tr><th scope="row">Mercury</th><td>3.30</td><td>4879</td><td>5427</td><td>3.7</td><td>4222.6</td></tr>
-        <tr><th scope="row">Venus</th><td>4.87</td><td>12104</td><td>5243</td><td>8.9</td><td>2802.0</td></tr>
-        <tr><th scope="row">Earth</th><td>5.97</td><td>12756</td><td>5514</td><td>9.8</td><td>24.0</td></tr>
-        <tr><th scope="row">Mars</th><td>0.642</td><td>6792</td><td>3933</td><td>3.7</td><td>24.7</td></tr>
-
         <tr>
-          <th scope="rowgroup" rowspan="1">Gas giants</th>
-          <th scope="row">Jupiter</th><td>1898</td><td>142984</td><td>1326</td><td>23.1</td><td>9.9</td>
+          <th scope="row">Mercury</th>
+          <td>3.30</td><td>4879</td><td>5427</td><td>3.7</td><td>4222.6</td>
         </tr>
-        <tr><th scope="row">Saturn</th><td>568</td><td>120536</td><td>687</td><td>9.0</td><td>10.7</td></tr>
+        <tr>
+          <th scope="row">Venus</th>
+          <td>4.87</td><td>12104</td><td>5243</td><td>8.9</td><td>2802.0</td>
+        </tr>
+        <tr>
+          <th scope="row">Earth</th>
+          <td>5.97</td><td>12756</td><td>5514</td><td>9.8</td><td>24.0</td>
+        </tr>
+        <tr>
+          <th scope="row">Mars</th>
+          <td>0.642</td><td>6792</td><td>3933</td><td>3.7</td><td>24.7</td>
+        </tr>
 
-        <tr><th scope="rowgroup" colspan="6">Ice giants</th></tr>
-        <tr><th scope="row">Uranus</th><td>86.8</td><td>51118</td><td>1271</td><td>8.7</td><td>17.2</td></tr>
-        <tr><th scope="row">Neptune</th><td>102</td><td>49528</td><td>1638</td><td>11.0</td><td>16.1</td></tr>
+        <!-- Special block: Outer planets (uses rowspan + colspan as per rubric) -->
+        <tr>
+          <!-- One header spanning all the rows of the Outer planets section -->
+          <th scope="rowgroup" rowspan="6">Outer planets</th>
+          <!-- Subgroup header spanning the remaining columns -->
+          <th scope="rowgroup" colspan="5">Gas giants</th>
+        </tr>
+        <tr>
+          <th scope="row">Jupiter</th>
+          <td>1898</td><td>142984</td><td>1326</td><td>23.1</td><td>9.9</td>
+        </tr>
+        <tr>
+          <th scope="row">Saturn</th>
+          <td>568</td><td>120536</td><td>687</td><td>9.0</td><td>10.7</td>
+        </tr>
+        <tr>
+          <!-- New subgroup header for Ice giants, still inside the Outer planets rowspan -->
+          <th scope="rowgroup" colspan="5">Ice giants</th>
+        </tr>
+        <tr>
+          <th scope="row">Uranus</th>
+          <td>86.8</td><td>51118</td><td>1271</td><td>8.7</td><td>17.2</td>
+        </tr>
+        <tr>
+          <th scope="row">Neptune</th>
+          <td>102</td><td>49528</td><td>1638</td><td>11.0</td><td>16.1</td>
+        </tr>
 
+        <!-- Dwarf planets -->
         <tr><th scope="rowgroup" colspan="6">Dwarf planets</th></tr>
-        <tr><th scope="row">Pluto</th><td>0.0146</td><td>2370</td><td>2095</td><td>0.7</td><td>153.3</td></tr>
+        <tr>
+          <th scope="row">Pluto</th>
+          <td>0.0146</td><td>2370</td><td>2095</td><td>0.7</td><td>153.3</td>
+        </tr>
       </tbody>
     </table>
 
