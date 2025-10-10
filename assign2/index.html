@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--
+    Name: Matthew Cagulada
+    File: assign2/index.html
+    Date: 9 September 2025
+    Description: A2 Part 1 — Creepy Crawlie splash page with video, images, and icons.
+  -->
+  <title>Creepy Crawlie — Splash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, sans-serif; line-height: 1.5; margin: 0; }
+    header { position: relative; overflow: hidden; }
+    header video { width: 100%; height: auto; display: block; }
+    nav ul { list-style: none; margin: 0; padding: .5rem 1rem; display: flex; gap: 1rem; background: #111; }
+    nav a { color: #fff; text-decoration: none; }
+    main { padding: 1rem; max-width: 960px; margin: 0 auto; }
+    section { padding: 1rem 0; border-bottom: 1px solid #ddd; }
+    figure { margin: .5rem 0; }
+    figcaption { font-size: .9rem; color: #444; }
+    .icon { margin-right: .4rem; }
+    footer { padding: 1rem; text-align: center; color: #666; }
+  </style>
+</head>
+<body>
+  <header>
+    <video autoplay muted loop preload="auto" playsinline>
+      <source src="media/bug-eating-leaf.mp4" type="video/mp4">
+      <source src="media/bug-eating-leaf.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#beetles">🪲 Beetles</a></li>
+        <li><a href="#butterflies">🦋 Butterflies</a></li>
+        <li><a href="#spiders">🕷️ Spiders</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="beetles" aria-labelledby="beetles-title">
+      <h2 id="beetles-title"><span class="icon" aria-hidden="true">🪲</span>Beetles</h2>
+      <p>Beetles form the order Coleoptera, with over 350,000 species described.</p>
+      <figure>
+        <img src="images/beetle.jpg" alt="Close-up of a beetle on a leaf" width="250" height="180">
+        <figcaption>Beetle on a leaf.</figcaption>
+      </figure>
+    </section>
+
+    <section id="butterflies" aria-labelledby="butterflies-title">
+      <h2 id="butterflies-title"><span class="icon" aria-hidden="true">🦋</span>Butterflies</h2>
+      <p>Butterflies are known for colorful wings and metamorphosis.</p>
+      <figure>
+        <img src="images/butterfly.jpg" alt="Butterfly with open wings on a flower" width="250" height="180">
+        <figcaption>Monarch butterfly feeding.</figcaption>
+      </figure>
+    </section>
+
+    <section id="spiders" aria-labelledby="spiders-title">
+      <h2 id="spiders-title"><span class="icon" aria-hidden="true">🕷️</span>Spiders</h2>
+      <p>Spiders are arachnids that typically inject venom to immobilize prey.</p>
+      <figure>
+        <img src="images/spider.jpg" alt="Spider on its web" width="250" height="180">
+        <figcaption>Spider web detail.</figcaption>
+      </figure>
+    </section>
+
+    <p><a href="planets.html">Go to Planets Table &raquo;</a></p>
+  </main>
+
+  <footer>&copy; 2025 Matthew Cagulada</footer>
+</body>
+</html>
