@@ -6,8 +6,8 @@
     Name: Matthew Cagulada
     File: assign2/planets.html
     Date: 9 October 2025
-    Description: A2 Part 2 — Structuring planet data table with scopes, rowgroups,
-                 and a special row using colspan + rowspan.
+    Description: A2 Part 2 — Planet data table with scopes, colgroup border,
+                 and a special Outer planets block using rowspan + colspan.
   -->
   <title>Structuring planet data</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,7 @@
     <h1>Structuring Planet Data</h1>
 
     <table>
-      <!-- Black border around the first (planet name) column -->
+      <!-- Black border around first column -->
       <colgroup>
         <col style="border-right: 3px solid #000;">
         <col span="5">
@@ -43,7 +43,7 @@
       </thead>
 
       <tbody>
-        <!-- Terrestrial group -->
+        <!-- Terrestrial planets -->
         <tr><th scope="rowgroup" colspan="6">Terrestrial planets</th></tr>
         <tr>
           <th scope="row">Mercury</th>
@@ -62,11 +62,9 @@
           <td>0.642</td><td>6792</td><td>3933</td><td>3.7</td><td>24.7</td>
         </tr>
 
-        <!-- Special block: Outer planets (uses rowspan + colspan as per rubric) -->
+        <!-- Outer planets (special block) -->
         <tr>
-          <!-- One header spanning all the rows of the Outer planets section -->
           <th scope="rowgroup" rowspan="6">Outer planets</th>
-          <!-- Subgroup header spanning the remaining columns -->
           <th scope="rowgroup" colspan="5">Gas giants</th>
         </tr>
         <tr>
@@ -78,7 +76,6 @@
           <td>568</td><td>120536</td><td>687</td><td>9.0</td><td>10.7</td>
         </tr>
         <tr>
-          <!-- New subgroup header for Ice giants, still inside the Outer planets rowspan -->
           <th scope="rowgroup" colspan="5">Ice giants</th>
         </tr>
         <tr>
