@@ -1,0 +1,105 @@
+/*
+  Name: Matthew Cagulada
+  File: styles.css
+  Date: 19 October 2025
+  Description: A3 Part 2 — Typesetting a homepage per rubric.
+*/
+
+/* ---------- Base & rhythm ---------- */
+:root {
+  --text: #111;
+  --muted: #555;
+  --link: #0b5bd3;
+  --hover: darkgreen;
+  --bar: #111;
+  --bar-text: #fff;
+}
+* { box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Merriweather", serif;        /* rubric: serif for body */
+  line-height: 1.6;                          /* rubric: ~1.4–1.6 */
+  background: #fff;
+}
+main { max-width: 72ch; margin: 2rem auto; padding: 0 1rem; }
+p { margin: 0 0 1rem; }
+small { color: var(--muted); }
+
+/* ---------- Headings ---------- */
+/* rubric: heavy sans for headings + letter-spacing, centered h1, no bottom margin */
+h1, h2, h3 {
+  font-family: "Oswald", system-ui, sans-serif;  /* rubric: heavy sans headings */
+  letter-spacing: 0.02em;                        /* subtle tracking */
+  line-height: 1.2;
+}
+h1 {
+  text-align: center;        /* rubric: center top-level heading */
+  margin: 0 0 0.25rem;       /* rubric: remove bottom margin (tight to content) */
+}
+h2 { margin: 1.5rem 0 0.5rem; }
+
+/* rubric: first paragraph after each h2 is indented */
+h2 + p { text-indent: 2em; }
+
+/* ---------- Links ---------- */
+/* rubric: underlined by default; remove underline on hover/focus; color system */
+a {
+  color: var(--link);
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration: underline;
+}
+a:hover, a:focus {
+  color: var(--hover);       /* rubric: darkgreen on hover */
+  text-decoration: none;     /* rubric: remove underline on hover/focus */
+}
+a:visited { color: #6a38a2; }  /* complementary visited color */
+a:focus { outline: 2px dashed #888; outline-offset: 2px; }
+
+/* External link icon (no image needed) */
+a.external::after {
+  content: " ↗";
+  font-family: inherit;
+  aria-hidden: true;
+}
+
+/* ---------- Lists ---------- */
+/* rubric: adjust list spacing to align with paragraph rhythm; custom bullets */
+ul { padding-left: 1.25rem; margin: 0 0 1rem; }
+.features { list-style: square; } /* clear, formal bullet */
+.features li { margin: 0.25rem 0; line-height: 1.6; }
+
+/* ---------- Navigation (top & bottom bars) ---------- */
+/* rubric: nav uses flexbox + consistent spacing; creates horizontal bar */
+.top-bar,
+.bottom-bar {
+  background: var(--bar);
+  color: var(--bar-text);
+}
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  display: flex;                 /* rubric: display:flex */
+  justify-content: center;       /* rubric: justify-content for links */
+  gap: 1rem;
+}
+.nav a {
+  font-family: "Oswald", system-ui, sans-serif;  /* rubric: same font as headings */
+  text-transform: uppercase;     /* rubric: uppercase nav text */
+  letter-spacing: 0.04em;
+  color: var(--bar-text);
+  text-decoration: none;         /* nav items look like tabs */
+  padding: 0.25rem 0.75rem;
+  display: inline-block;         /* ensure full clickable area */
+}
+.nav a:hover, .nav a:focus {
+  background: #333;
+  border-radius: 4px;
+}
+
+/* Optional: make footer bar mirror the top bar layout */
+.bottom-bar { margin-top: 2rem; text-align: center; }
+.bottom-bar small { display: block; padding: 0 0 1rem; color: #bbb; }

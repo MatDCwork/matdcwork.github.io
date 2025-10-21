@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--
+    Name: Matthew Cagulada
+    File: index.html
+    Date: 19 October 2025
+    Description: A3 Part 2 — Typesetting a homepage with web fonts,
+                 readable text, link styles, lists, and a styled nav bar.
+  -->
+  <title>Typeset Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts: serif for body, heavy sans for headings/nav -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <header class="top-bar">
+    <nav aria-label="Primary">
+      <ul class="nav">
+        <li><a href="#welcome">Welcome</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a class="external" href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Matthew’s Typeset Homepage</h1>
+
+    <section id="welcome" aria-labelledby="welcome-title">
+      <h2 id="welcome-title">Welcome</h2>
+      <p>This page demonstrates clean typesetting using semantic HTML and CSS. We combine a readable serif body with bold, condensed headings for a trustworthy look.</p>
+      <p>Typography choices, link behavior, lists, and navigation have all been tuned to match the assignment’s rubric.</p>
+    </section>
+
+    <section id="features" aria-labelledby="features-title">
+      <h2 id="features-title">Features</h2>
+      <p>Below are a few highlights of the styles used on this page.</p>
+      <ul class="features">
+        <li>Two complementary web fonts (body + headings)</li>
+        <li>Comfortable line length and line height</li>
+        <li>Accessible link styles with visible focus</li>
+        <li>Lists spaced to align with paragraph rhythm</li>
+        <li>A flexbox navigation bar that forms a top/bottom rule</li>
+      </ul>
+
+      <h2>More resources</h2>
+      <p>Visit the <a class="external" href="https://web.dev/learn/css/typography/" target="_blank" rel="noopener">web.dev typography guide</a> to keep learning.</p>
+    </section>
+  </main>
+
+  <footer class="bottom-bar">
+    <nav aria-label="Footer">
+      <ul class="nav">
+        <li><a href="#welcome">Top</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a class="external" href="https://durhamcollege.ca/" target="_blank" rel="noopener">Durham College</a></li>
+      </ul>
+    </nav>
+    <small>&copy; 2025 Matthew Cagulada</small>
+  </footer>
+</body>
+</html>
