@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--
+    Name: Matthew Cagulada
+    File: index.html
+    Date: 19 October 2025
+    Description: A3 Part 3 — Layout comprehension: sticky flexbox nav,
+                 floated article images, 2-column article/aside grid,
+                 and a 2-column photographs grid with a 1px gap.
+  -->
+  <title>Layout Comprehension — City Textures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky navigation bar (flexbox) -->
+  <header class="site-header">
+    <nav aria-label="Primary">
+      <ul class="nav">
+        <li><a href="#article">Article</a></li>
+        <li><a href="#photos">Photos</a></li>
+        <li><a href="#aside">Aside</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Two-column layout: article + aside -->
+  <main class="layout">
+    <article id="article">
+      <h1>City Textures</h1>
+
+      <p>
+        <img class="illustration" src="images/city-float.jpg" alt="Glass and steel city facade">
+        This page demonstrates a sticky, flexbox navigation bar; a two-column grid layout for
+        the main content and sidebar; and floated images inside the article. The floated image
+        to the left lets text wrap around a striking city texture.
+      </p>
+      <p>Scroll to see the navigation bar lock to the top. The photographs section below shows a simple two-column grid with a precise 1px gap between images.</p>
+
+      <h2 id="photos">Photographs</h2>
+      <p>Four city-themed textures arranged in a two-column grid.</p>
+
+      <div class="photographs">
+        <img src="images/city-grid-1.jpg" alt="City towers at night">
+        <img src="images/city-grid-2.jpg" alt="Blue-toned skyline">
+        <img src="images/city-grid-3.jpg" alt="Urban paving texture">
+        <img src="images/city-grid-4.jpg" alt="Bright skyline panorama">
+      </div>
+
+      <p>Try swapping in other textures—brick, asphalt, glass, or steel—while keeping the same layout rules.</p>
+    </article>
+
+    <aside id="aside">
+      <h2>Sidebar</h2>
+      <p>The sidebar sits in the second grid column and may include links or summaries.</p>
+      <img class="illustration" src="images/city-aside.jpg" alt="Neon waterfront skyline">
+      <p>Images in the sidebar also use the <code>.illustration</code> class, so they float with margin inside text blocks.</p>
+    </aside>
+  </main>
+
+</body>
+</html>
