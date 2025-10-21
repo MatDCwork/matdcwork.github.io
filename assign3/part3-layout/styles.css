@@ -1,0 +1,76 @@
+/*
+  Name: Matthew Cagulada
+  File: styles.css
+  Date: 19 October 2025
+  Description: A3 Part 3 — Flexbox sticky nav, floated article images,
+               2-column layout grid, and photographs grid.
+*/
+
+/* Basic reset */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; color: #111; }
+
+/* -------- Nav (flexbox) + sticky -------- */
+.site-header {
+  position: sticky;           /* sticks to top when scrolling */
+  top: 0;
+  z-index: 10;
+  background: #111;
+}
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: .5rem 1rem;
+  display: flex;              /* FLEXBOX */
+  justify-content: center;    /* center the links */
+  gap: 1rem;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: .35rem .75rem;
+  display: inline-block;
+}
+.nav a:hover, .nav a:focus { background: #333; border-radius: 4px; }
+
+/* -------- Two-column layout (article + aside) -------- */
+.layout {
+  display: grid;                 /* GRID LAYOUT */
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+/* -------- Article images: float left with margins -------- */
+article .illustration {
+  float: left;                   /* FLOAT */
+  width: 40%;
+  max-width: 320px;
+  margin: 0 .75rem .5rem 0;      /* space around floated image */
+  height: auto;
+  display: block;
+}
+
+/* Clear floats at the end of article blocks */
+article::after { content: ""; display: block; clear: both; }
+
+/* -------- Photographs grid (2 columns, 1px gap) -------- */
+.photographs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;                      /* EXACT 1px gap */
+  margin: 1rem 0;
+}
+.photographs img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Minor typography */
+h1, h2 { line-height: 1.25; margin: 1rem 0 .5rem; }
+p { margin: 0 0 1rem; }
