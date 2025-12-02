@@ -1,0 +1,5 @@
+/* Name: Matthew Cagulada | File: style.css | Date: November 30, 2025 */
+:root{color-scheme:dark}
+html,body{height:100%;margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:#0f1115;color:#e9eef3}
+h1{margin:1rem auto;text-align:center;font-size:1.4rem}
+canvas{display:block;margin:0 auto;max-width:100vw;max-height:80vh;border:1px solid #263043;border-radius:10px;background:#0b1018}
