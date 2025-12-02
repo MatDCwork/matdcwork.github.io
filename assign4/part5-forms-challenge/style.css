@@ -1,0 +1,45 @@
+/* Name: Matthew Cagulada | File: style.css | Date: November 30, 2025 */
+
+:root{
+  --bg:#0f1115; --fg:#e9eef3; --muted:#b8c2cc;
+  --panel:#151923; --border:#283347; --accent:#58a6ff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.6 system-ui, Segoe UI, Arial, sans-serif}
+
+header{max-width:1100px;margin:1rem auto 0;padding:0 1rem}
+h1{margin:.25rem 0 0;font-size:1.6rem}
+#intro{color:var(--muted);margin:.25rem 0 .75rem}
+.page-nav{display:flex;gap:.75rem;flex-wrap:wrap;margin:0 0 .75rem}
+.page-nav a{color:var(--accent);text-decoration:none}
+.page-nav a:hover{text-decoration:underline}
+header img{display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:10px}
+
+form{max-width:1100px;margin:1rem auto 2rem;padding:0 1rem}
+.form-section{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:1rem;margin:1rem 0}
+.form-section h2{margin:0 0 .5rem}
+.field{margin:.5rem 0}
+.separator{height:1px;background:var(--border);margin:1rem 0}
+
+label{display:block;font-weight:600;margin:0 0 .25rem}
+input, select, textarea{
+  width:100%; padding:.6rem .7rem; border-radius:8px;
+  border:1px solid var(--border); background:#0b1018; color:var(--fg)
+}
+input::placeholder, textarea::placeholder{color:#8ea0b6}
+small.hint{display:block;color:var(--muted);margin:.25rem 0 0}
+
+fieldset{border:1px solid var(--border);border-radius:10px;padding:.75rem 1rem;margin:.75rem 0;background:#0b1018}
+legend{padding:0 .25rem;color:var(--muted)}
+fieldset label{display:inline-block;margin:.25rem .75rem .25rem 0;font-weight:400}
+fieldset input{width:auto;margin-right:.35rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+
+.actions{margin-top:1rem}
+button{
+  background:#0c1420;color:var(--fg);border:1px solid var(--border);
+  padding:.55rem 1rem;border-radius:8px;cursor:pointer
+}
+button:hover{outline:1px solid var(--accent)}

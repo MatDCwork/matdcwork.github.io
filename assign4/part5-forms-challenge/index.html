@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--
+    Name: Matthew Cagulada
+    File: index.html
+    Date: November 30, 2025
+    Part 5 — Forms Challenge: a structured, accessible feedback form.
+  -->
+  <title>Part 5 — Feedback Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>We value your feedback</h1>
+    <p id="intro">Tell us about your stay. Use the sections below.</p>
+
+    <!-- Simple in-page nav (anchors) -->
+    <nav aria-label="Page sections" class="page-nav">
+      <a href="#facilities">Facilities</a>
+      <a href="#hosts">About your hosts</a>
+      <a href="#other">Any other feedback?</a>
+      <a href="#details">Your details</a>
+    </nav>
+
+    <!-- Decorative header image; empty alt so screen readers skip it -->
+    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop"
+         alt="">
+  </header>
+
+  <!-- The whole document is wrapped in one <form> -->
+  <form action="#" method="post" novalidate>
+    <!-- Facilities -->
+    <section id="facilities" class="form-section" aria-labelledby="facilities-title">
+      <h2 id="facilities-title">Facilities</h2>
+
+      <fieldset>
+        <legend>Gym access</legend>
+        <label><input type="radio" name="gym" value="excellent" checked> Excellent</label>
+        <label><input type="radio" name="gym" value="good"> Good</label>
+        <label><input type="radio" name="gym" value="average"> Average</label>
+        <label><input type="radio" name="gym" value="poor"> Poor</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pool</legend>
+        <label><input type="radio" name="pool" value="excellent" checked> Excellent</label>
+        <label><input type="radio" name="pool" value="good"> Good</label>
+        <label><input type="radio" name="pool" value="average"> Average</label>
+        <label><input type="radio" name="pool" value="poor"> Poor</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Extra facilities (check all that apply)</legend>
+        <label><input type="checkbox" name="extras" value="sauna"> Sauna</label>
+        <label><input type="checkbox" name="extras" value="parking"> Parking</label>
+        <label><input type="checkbox" name="extras" value="wifi"> Wi-Fi</label>
+        <label><input type="checkbox" name="extras" value="breakfast"> Breakfast</label>
+      </fieldset>
+    </section>
+
+    <div class="separator" role="separator" aria-hidden="true"></div>
+
+    <!-- About your hosts -->
+    <section id="hosts" class="form-section" aria-labelledby="hosts-title">
+      <h2 id="hosts-title">About your hosts</h2>
+
+      <div class="field">
+        <label for="host-help">How helpful were your hosts?</label>
+        <select id="host-help" name="hostHelp">
+          <option value="very-helpful">Very helpful</option>
+          <option value="helpful">Helpful</option>
+          <option value="okay">Okay</option>
+          <option value="not-helpful">Not helpful</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="host-know">Hosts’ knowledge level</label>
+        <select id="host-know" name="hostKnow">
+          <option value="expert">Expert</option>
+          <option value="good">Good</option>
+          <option value="basic">Basic</option>
+          <option value="poor">Poor</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="separator" role="separator" aria-hidden="true"></div>
+
+    <!-- Any other feedback? -->
+    <section id="other" class="form-section" aria-labelledby="other-title">
+      <h2 id="other-title">Any other feedback?</h2>
+
+      <div class="field">
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments" rows="6"
+                  placeholder="Share anything else here…"></textarea>
+      </div>
+    </section>
+
+    <div class="separator" role="separator" aria-hidden="true"></div>
+
+    <!-- Your details -->
+    <section id="details" class="form-section" aria-labelledby="details-title">
+      <h2 id="details-title">Your details</h2>
+
+      <div class="grid">
+        <div class="field">
+          <label for="your-name">Your name <span aria-hidden="true">*</span></label>
+          <input id="your-name" name="yourName" type="text" required
+                 placeholder="Jane Doe">
+        </div>
+
+        <div class="field">
+          <label for="your-email">Email <span aria-hidden="true">*</span></label>
+          <input id="your-email" name="email" type="email" required
+                 placeholder="jane@example.com">
+        </div>
+
+        <div class="field">
+          <label for="your-age">Age</label>
+          <input id="your-age" name="age" type="number" min="0" max="120" step="1"
+                 placeholder="18">
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone (10 digits)</label>
+          <input id="phone" name="phone" type="tel" pattern="\\d{10}"
+                 inputmode="numeric" placeholder="9055551234">
+          <small class="hint">Digits only, e.g., 9055551234</small>
+        </div>
+      </div>
+    </section>
+
+    <p class="actions">
+      <button type="submit">Submit feedback</button>
+    </p>
+  </form>
+</body>
+</html>
