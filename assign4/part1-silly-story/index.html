@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--
+    Name: Matthew Cagulada
+    File: index.html
+    Date: November 30, 2025
+    This is the Index file.
+  -->
+  <title>Part 1 — Silly Story</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Silly story generator</h1>
+
+  <label for="customname">Enter custom name:</label>
+  <input id="customname" type="text" placeholder="">
+
+  <div class="units">
+    <label><input id="us"  type="radio" name="units" checked> US</label>
+    <label><input id="uk"  type="radio" name="units"> UK</label>
+  </div>
+
+  <button class="randomize" type="button">Generate random story</button>
+  <p class="story" aria-live="polite"></p>
+
+  <script src="main.js"></script>
+</body>
+</html>
