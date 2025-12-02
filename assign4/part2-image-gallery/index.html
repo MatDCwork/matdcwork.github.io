@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--
+    Name: Matthew Cagulada
+    File: index.html
+    Date: November 30, 2025
+    A simple JavaScript image gallery with thumbnails and a darken/lighten toggle.
+  -->
+  <title>Part 2 — Image Gallery (Scientific)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar" role="navigation" aria-label="Main">
+    <a href="#" class="brand">Image Gallery</a>
+  </header>
+
+  <main>
+    <h1>Scientific Image Gallery</h1>
+
+    <section class="display" aria-live="polite">
+      <img class="full-img" src="images/pic1.jpg" alt="Abstract AI/technology schematic with neural network icons.">
+      <button class="dark" type="button" aria-pressed="false">Darken</button>
+    </section>
+
+    <section class="thumb-bar" aria-label="Thumbnails">
+      <!-- JS will insert <img> thumbnails here -->
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

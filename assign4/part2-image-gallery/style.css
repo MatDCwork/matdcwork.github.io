@@ -1,0 +1,42 @@
+/* Name: Matthew Cagulada | File: style.css | Date: November 30, 2025 */
+
+:root{
+  --bg:#0f1115;
+  --fg:#e9eef3;
+  --muted:#b8c2cc;
+  --accent:#58a6ff;
+  --panel:#151923;
+  --border:#263043;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui, Segoe UI, Arial, sans-serif}
+
+.topbar{
+  position:sticky;top:0;z-index:10;
+  background:#0c0f14;border-bottom:1px solid var(--border);
+  padding:.6rem 1rem;display:flex;gap:1rem;align-items:center
+}
+.topbar .brand{color:var(--fg);text-decoration:none;font-weight:600;letter-spacing:.3px}
+
+main{max-width:1100px;margin:2rem auto;padding:0 1rem}
+h1{font-size:1.6rem;margin:.2rem 0 1rem;color:#eaf2ff}
+
+.display{position:relative;background:var(--panel);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.full-img{display:block;width:100%;height:auto;transition:filter .15s ease}
+button{
+  position:absolute;right:.75rem;bottom:.75rem;
+  padding:.45rem .85rem;border-radius:8px;border:1px solid var(--border);
+  background:#0c1420;color:var(--fg);cursor:pointer
+}
+button:hover{outline:1px solid var(--accent)}
+button.light{background:#22314a}
+
+.thumb-bar{
+  margin:1rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem
+}
+.thumb-bar img{
+  width:140px;height:90px;object-fit:cover;cursor:pointer;
+  border-radius:8px;border:1px solid var(--border);background:#0b1018
+}
+.thumb-bar img:focus,.thumb-bar img:hover{outline:2px solid var(--accent);outline-offset:2px}
