@@ -1,56 +1,72 @@
-<!--
-  Name: Matthew Cagulada
-  File: index.html
-  Date: 12 December 2025
-  A very brief description of the file (Accessibility troubleshooting fix-ups).
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Accessibility Fixes</title>
+  <title>Accessibility Fixes — Assignment 5</title>
+
+  <!--
+    Name: Matthew Cagulada
+    File: index.html
+    Date: 12 December 2025
+    Description: A11y fixes: semantic structure, accessible media with alt text,
+                 and an ARIA-driven Show/Hide transcript button.
+  -->
+
   <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <h1>Accessibility Troubleshooting Demo</h1>
-    <nav aria-label="Main">
-      <ul class="nav">
-        <li><a href="#intro">Intro</a></li>
-        <li><a href="#media">Media</a></li>
-        <li><a href="#forms">Forms</a></li>
-        <li><a href="#table">Data table</a></li>
-      </ul>
+    <h1>We value your feedback</h1>
+    <p class="lede">Tell us about your stay. Use the sections below.</p>
+    <nav class="top-nav" aria-label="Page sections">
+      <a href="#media">Media</a>
     </nav>
   </header>
 
-  <main id="content">
-    <section id="intro" aria-labelledby="intro-h2">
-      <h2 id="intro-h2">Introduction</h2>
-      <p>This page is the fixed version used for the accessibility assignment.</p>
-    </section>
-
+  <main id="main">
+    <!-- ========== MEDIA SECTION ========== -->
     <section id="media" aria-labelledby="media-h2">
       <h2 id="media-h2">Media</h2>
-      <!-- We’ll add images and an audio transcript later -->
-    </section>
 
-    <section id="forms" aria-labelledby="forms-h2">
-      <h2 id="forms-h2">Forms</h2>
-      <!-- We’ll build an accessible form here -->
-    </section>
+      <figure>
+        <img src="images/Helping.jpg"
+             alt="Silhouette of a person helping another to stand at sunrise">
+        <figcaption>Helping hands — we’re here to support you.</figcaption>
+      </figure>
 
-    <section id="table" aria-labelledby="table-h2">
-      <h2 id="table-h2">Data table</h2>
-      <!-- We’ll add a table with caption and scopes here -->
+      <h3>Welcome message (with transcript)</h3>
+
+      <!-- Optional audio: include if you have a file in /media/welcome.mp3
+      <audio controls src="media/welcome.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      -->
+
+      <!-- Accessible Show/Hide button -->
+      <button id="toggle-transcript"
+              class="btn"
+              aria-controls="welcome-transcript"
+              aria-expanded="false">
+        Show transcript
+      </button>
+
+      <section id="welcome-transcript"
+               class="hidden"
+               aria-labelledby="welcome-transcript-h3">
+        <h3 id="welcome-transcript-h3">Transcript</h3>
+        <p>
+          Hello and welcome! We’re glad you’re here. If you need any assistance,
+          our hosts are happy to help. Enjoy your stay and please share your feedback.
+        </p>
+      </section>
     </section>
+    <!-- ========== /MEDIA SECTION ========== -->
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2025 Accessibility Demo</p>
   </footer>
-
-  <script src="main.js"></script>
 </body>
 </html>

@@ -1,60 +1,62 @@
-/*
-  Name: Matthew Cagulada
-  File: styles.css
-  Date: 12 December 2025
-  A very brief description of the file (Accessibility troubleshooting styles).
-*/
+/* -----------------------------------------
+   Name: Matthew Cagulada
+   File: styles.css
+   Date: 12 December 2025
+   Description: Base styles + a11y helpers.
+----------------------------------------- */
 
 :root{
-  --bg:#0d0f14;         /* dark background for strong contrast */
-  --fg:#f1f5f9;         /* light text */
-  --link:#7dc3ff;       /* accessible link color */
-  --accent:#ffd166;     /* focus outline color */
-  --muted:#2a2f39;
-  --maxw:1100px;
+  --bg:#0f172a;        /* dark background for contrast */
+  --panel:#111827;
+  --text:#e5e7eb;      /* light text */
+  --muted:#c7ced9;
+  --accent:#1e293b;
+  --accent-2:#253246;
+  --border:#324253;
 }
 
 *{box-sizing:border-box}
-
-html,body{
-  margin:0;
-  color:var(--fg);
+html,body{margin:0;padding:0}
+body{
   background:var(--bg);
-  font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:var(--text);
+  font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-.site-header,
-.site-footer{
-  border-block:1px solid var(--muted);
-  background:#0f131b;
-}
+.site-header,.site-footer{padding:1.25rem 1rem;max-width:1100px;margin-inline:auto}
+.lede{color:var(--muted);margin:.25rem 0 0}
 
-main, .site-header, .site-footer{
-  max-width:var(--maxw);
-  margin-inline:auto;
-  padding:16px;
+.top-nav{margin-top:.5rem}
+.top-nav a{
+  color:#8ab4ff;
+  text-decoration:none;
+  margin-right:1rem;
 }
+.top-nav a:hover{text-decoration:underline}
 
-h1,h2,h3{margin:0 0 .5rem}
-p{margin:.5rem 0}
+main{max-width:1100px;margin:0 auto;padding:1rem}
 
-.nav{
-  list-style:none;
-  margin:.5rem 0 0;
-  padding:0;
-  display:flex;
-  gap:1rem;
-  flex-wrap:wrap;
+h1,h2,h3{line-height:1.2;margin:.2rem 0 .6rem}
+h2{margin-top:1.25rem}
+
+/* Figures / images */
+figure{margin:1rem 0}
+figure img{max-width:100%;height:auto;border-radius:8px;display:block}
+figcaption{font-size:.95rem;color:var(--muted);margin-top:.25rem}
+
+/* Button + show/hide pattern */
+.hidden{display:none}
+
+.btn{
+  background:var(--accent);
+  color:#fff;
+  border:1px solid var(--border);
+  padding:.55rem .95rem;
+  border-radius:.5rem;
+  cursor:pointer;
+  font-weight:600;
 }
-a{color:var(--link)}
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:3px;
-}
+.btn:hover{background:var(--accent-2)}
+.btn:active{transform:translateY(1px)}
 
-/* simple section spacing */
-section{padding-block:1rem;border-bottom:1px solid var(--muted)}
+.site-footer{border-top:1px solid var(--border);color:var(--muted);margin-top:2rem}
