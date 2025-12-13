@@ -1,0 +1,60 @@
+/*
+  Name: Matthew Cagulada
+  File: styles.css
+  Date: 12 December 2025
+  A very brief description of the file (Accessibility troubleshooting styles).
+*/
+
+:root{
+  --bg:#0d0f14;         /* dark background for strong contrast */
+  --fg:#f1f5f9;         /* light text */
+  --link:#7dc3ff;       /* accessible link color */
+  --accent:#ffd166;     /* focus outline color */
+  --muted:#2a2f39;
+  --maxw:1100px;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  color:var(--fg);
+  background:var(--bg);
+  font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.site-header,
+.site-footer{
+  border-block:1px solid var(--muted);
+  background:#0f131b;
+}
+
+main, .site-header, .site-footer{
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding:16px;
+}
+
+h1,h2,h3{margin:0 0 .5rem}
+p{margin:.5rem 0}
+
+.nav{
+  list-style:none;
+  margin:.5rem 0 0;
+  padding:0;
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+a{color:var(--link)}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+
+/* simple section spacing */
+section{padding-block:1rem;border-bottom:1px solid var(--muted)}
