@@ -9,17 +9,22 @@
     Name: Matthew Cagulada
     File: index.html
     Date: 12 December 2025
-    Description: A11y fixes: semantic structure, accessible media with alt text,
-                 and an ARIA-driven Show/Hide transcript button.
+    Description: A11y fixes: skip link, semantic header/nav, accessible media,
+                 and ARIA-driven Show/Hide transcript button.
   -->
 
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
 <body>
+  <!-- Accessible Skip Link (Step 4) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <h1>We value your feedback</h1>
     <p class="lede">Tell us about your stay. Use the sections below.</p>
+
+    <!-- Named navigation landmark -->
     <nav class="top-nav" aria-label="Page sections">
       <a href="#media">Media</a>
     </nav>
@@ -38,7 +43,7 @@
 
       <h3>Welcome message (with transcript)</h3>
 
-      <!-- Optional audio: include if you have a file in /media/welcome.mp3
+      <!-- Optional audio:
       <audio controls src="media/welcome.mp3">
         Your browser does not support the audio element.
       </audio>

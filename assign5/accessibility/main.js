@@ -5,7 +5,6 @@
    Description: JS for accessible Show/Hide transcript.
 ----------------------------------------- */
 
-// Accessible show/hide for transcript
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('toggle-transcript');
   const transcript = document.getElementById('welcome-transcript');
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!toggleBtn || !transcript) return;
 
   toggleBtn.addEventListener('click', () => {
-    const isHiddenNow = transcript.classList.toggle('hidden'); // true if now hidden
+    const isHiddenNow = transcript.classList.toggle('hidden');
     const expanded = !isHiddenNow;
 
     toggleBtn.setAttribute('aria-expanded', String(expanded));
