@@ -9,45 +9,53 @@
     Name: Matthew Cagulada
     File: index.html
     Date: 12 December 2025
-    Description: A11y fixes: skip link, semantic header/nav, accessible media,
-                 and ARIA-driven Show/Hide transcript button.
+    Description: A11y fixes incl. skip link, named nav, accessible media,
+                 transcript toggle, and audio fallback (Step 5).
   -->
 
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
 <body>
-  <!-- Accessible Skip Link (Step 4) -->
+  <!-- Accessible Skip Link -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <h1>We value your feedback</h1>
     <p class="lede">Tell us about your stay. Use the sections below.</p>
 
-    <!-- Named navigation landmark -->
     <nav class="top-nav" aria-label="Page sections">
       <a href="#media">Media</a>
     </nav>
   </header>
 
-  <main id="main">
+  <!-- tabindex enables programmatic focus from the skip link -->
+  <main id="main" tabindex="-1">
     <!-- ========== MEDIA SECTION ========== -->
     <section id="media" aria-labelledby="media-h2">
       <h2 id="media-h2">Media</h2>
 
       <figure>
-        <img src="images/Helping.jpg"
-             alt="Silhouette of a person helping another to stand at sunrise">
-        <figcaption>Helping hands — we’re here to support you.</figcaption>
+        <img
+          src="images/Helping.jpg"
+          width="1200" height="800"
+          alt="Silhouette of a person helping another to stand at sunrise"
+          aria-describedby="helping-cap"
+        >
+        <figcaption id="helping-cap">Helping hands — we’re here to support you.</figcaption>
       </figure>
 
       <h3>Welcome message (with transcript)</h3>
 
-      <!-- Optional audio:
-      <audio controls src="media/welcome.mp3">
-        Your browser does not support the audio element.
+      <!-- Accessible audio with fallback link -->
+      <audio controls preload="metadata">
+        <!-- If you add a real file later, update the src below -->
+        <source src="media/welcome.mp3" type="audio/mpeg">
+        <p>
+          Your browser does not support the audio element.
+          <a href="media/welcome.mp3">Download the audio file</a>.
+        </p>
       </audio>
-      -->
 
       <!-- Accessible Show/Hide button -->
       <button id="toggle-transcript"

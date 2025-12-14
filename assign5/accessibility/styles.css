@@ -2,18 +2,18 @@
    Name: Matthew Cagulada
    File: styles.css
    Date: 12 December 2025
-   Description: Base styles + a11y helpers (Step 4 additions).
+   Description: Base styles + a11y helpers (Step 5 updates).
 ----------------------------------------- */
 
 :root{
-  --bg:#0f172a;        /* dark background for contrast */
+  --bg:#0f172a;
   --panel:#111827;
-  --text:#e5e7eb;      /* light text */
+  --text:#e5e7eb;
   --muted:#c7ced9;
   --accent:#1e293b;
   --accent-2:#253246;
   --border:#324253;
-  --focus:#93c5fd;     /* focus outline color */
+  --focus:#93c5fd;
 }
 
 *{box-sizing:border-box}
@@ -24,23 +24,13 @@ body{
   font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* ---- Skip link (Step 4) ---- */
+/* Skip link */
 .skip-link{
-  position:absolute;
-  left:-9999px;
-  top:auto;
-  width:1px;height:1px;
-  overflow:hidden;
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
 }
 .skip-link:focus{
-  position:static;
-  display:inline-block;
-  width:auto;height:auto;
-  margin:.5rem;
-  padding:.5rem .75rem;
-  background:#111827;
-  color:#fff;
-  border:2px solid var(--focus);
+  position:static;display:inline-block;width:auto;height:auto;margin:.5rem;
+  padding:.5rem .75rem;background:#111827;color:#fff;border:2px solid var(--focus);
   border-radius:.5rem;
 }
 
@@ -48,11 +38,7 @@ body{
 .lede{color:var(--muted);margin:.25rem 0 0}
 
 .top-nav{margin-top:.5rem}
-.top-nav a{
-  color:#8ab4ff;
-  text-decoration:none;
-  margin-right:1rem;
-}
+.top-nav a{color:#8ab4ff;text-decoration:none;margin-right:1rem}
 .top-nav a:hover{text-decoration:underline}
 
 main{max-width:1100px;margin:0 auto;padding:1rem}
@@ -65,26 +51,29 @@ figure{margin:1rem 0}
 figure img{max-width:100%;height:auto;border-radius:8px;display:block}
 figcaption{font-size:.95rem;color:var(--muted);margin-top:.25rem}
 
+/* Audio spacing */
+audio{display:block;margin:.75rem 0 1rem}
+
 /* Button + show/hide pattern */
 .hidden{display:none}
-
 .btn{
-  background:var(--accent);
-  color:#fff;
-  border:1px solid var(--border);
-  padding:.55rem .95rem;
-  border-radius:.5rem;
-  cursor:pointer;
-  font-weight:600;
+  background:var(--accent);color:#fff;border:1px solid var(--border);
+  padding:.55rem .95rem;border-radius:.5rem;cursor:pointer;font-weight:600;
 }
 .btn:hover{background:var(--accent-2)}
 .btn:active{transform:translateY(1px)}
 
-/* ---- Keyboard focus visibility (Step 4) ---- */
+/* Strong focus outlines */
 a:focus, button:focus, [tabindex]:focus{
-  outline:3px solid var(--focus);
-  outline-offset:2px;
-  border-radius:.35rem;
+  outline:3px solid var(--focus);outline-offset:2px;border-radius:.35rem;
+}
+
+/* Prefer focus-visible where supported */
+:where(a,button,[tabindex]):focus:not(:focus-visible){outline:none}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{scroll-behavior:auto;animation:none;transition:none}
 }
 
 .site-footer{border-top:1px solid var(--border);color:var(--muted);margin-top:2rem}
